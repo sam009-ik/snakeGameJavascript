@@ -276,15 +276,3 @@ function updateHighScore() {
 }
 
 
-
-//draw()
-
-//Test Moving
-// setInterval(() => {
-//     //Calls move first
-//     move();
-//     //Calls draw to draw again after moving
-//     draw()
-// }, 200)
-
-
