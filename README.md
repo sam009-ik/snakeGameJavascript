@@ -3,21 +3,23 @@
 This project is a web-based version of the classic Nokia snake game, implemented with a modern twist. It combines the nostalgic feel of the old-school snake game with contemporary web technologies, offering a fun and engaging experience. 
 
 ## Project Structure and Description
+
 The project is structured into various components, each serving a specific role in the application:
 
-> 'templates' Folder
-layout.html: Serves as the base template for the application. It defines the basic structure (HTML boilerplate, navigation bar, etc.) that is common across all pages.
-index.html: The main game interface where users interact with the snake game.
-login.html and register.html: These templates handle user authentication, allowing users to sign up for a new account or log in to an existing one.
-leaderboard.html: Displays the leaderboard, ranking users based on their high scores.
+### `templates` Folder
+- **`layout.html`**: Serves as the base template for the application. It defines the basic structure (HTML boilerplate, navigation bar, etc.) that is common across all pages.
+- **`index.html`**: The main game interface where users interact with the snake game.
+- **`login.html`** and **`register.html`**: These templates handle user authentication, allowing users to sign up for a new account or log in to an existing one.
+- **`leaderboard.html`**: Displays the leaderboard, ranking users based on their high scores.
+
 The templates utilize Jinja templating language to dynamically generate HTML based on the server-side data.
 
-> 'static' Folder
-style.css: Contains custom styling for the application, complementing the Bootstrap framework used for the frontend design.
-script.js: Houses the core logic of the snake game, including user input handling, game mechanics, and rendering the game on the screen.
-gameMusic: A subfolder containing audio files that are played during various events in the game (e.g., game start, game over, snake eating).
+### `static` Folder
+- **`style.css`**: Contains custom styling for the application, complementing the Bootstrap framework used for the frontend design.
+- **`script.js`**: Houses the core logic of the snake game, including user input handling, game mechanics, and rendering the game on the screen.
+- **`gameMusic`**: A subfolder containing audio files that are played during various events in the game (e.g., game start, game over, snake eating).
 
-> app.py
+### `app.py`
 This is the main application file where the Flask server is defined. It handles backend logic, including routing, user authentication, session management, and interaction with the SQLite database for storing user information and high scores.
 
 ## Features
@@ -30,8 +32,6 @@ This is the main application file where the Flask server is defined. It handles 
 - **Customization**: Players can personalize their experience by choosing the snake's color via on-screen buttons.
 - **Responsive Design**: The game is fully responsive, providing a seamless experience on various devices and screen sizes.
 
-
-
 ## Technologies
 
 - **Frontend**: The game's frontend is built with HTML, CSS, and JavaScript, offering a dynamic and responsive user interface.
@@ -42,27 +42,27 @@ This is the main application file where the Flask server is defined. It handles 
 ## Local Setup
 
 1. **Clone the Repository**:
-   ```
-   git clone https://github.com/your-github-username/snakegamejavascript.git
-   cd snakegamejavascript
-   ```
+     ```
+     git clone https://github.com/your-github-username/snakegamejavascript.git
+     cd snakegamejavascript
+     ```
 
 2. **Install Dependencies**:
-   - Create a virtual environment and activate it:
-     ```
-     python -m venv venv
-     source venv/bin/activate  # For Windows use `venv\Scripts\activate`
-     ```
-   - Install the required packages:
-     ```
-     pip install -r requirements.txt
-     ```
+     - Create a virtual environment and activate it:
+         ```
+         python -m venv venv
+         source venv/bin/activate  # For Windows use `venv\Scripts\activate`
+         ```
+     - Install the required packages:
+         ```
+         pip install -r requirements.txt
+         ```
 
 3. **Run the Application**:
-   - Start the Flask application:
-     ```
-     flask run
-     ```
+     - Start the Flask application:
+         ```
+         flask run
+         ```
 
 ## Design Choices and Considerations
 - Flask Framework: Chosen for its simplicity and flexibility in developing web applications. It allows for easy setup and integration with SQLite and SQLAlchemy for database management.
