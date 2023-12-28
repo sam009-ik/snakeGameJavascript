@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Leaderboard
+{% endblock %}
+
+{% block main %}
+    <div class="container mt-5">
+        <h2 class="text-center">Leaderboard</h2>
+        
+        <table class="table mt-4">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Snake Name</th>
+                    <th scope="col">Highscore</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                    {% if current_user.is_authenticated and user.username == current_user.username %}
+                        <tr class="table table-active"> <!-- Highlight for current user -->
+                    {% else %}
+                        <tr>
+                    {% endif %}
+                        <th scope="row">{{ loop.index }}</th>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.snakename }}</td>
+                        <td>{{ user.highscore }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

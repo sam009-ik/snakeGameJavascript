@@ -1,0 +1,198 @@
+body {
+    font-family: 'VT323', monospace;
+    background-color: rgb(217, 224, 234);
+   
+    
+    
+}
+main {
+    border-top: 1px dotted black;
+    border-bottom: 1px dotted black;
+}
+
+.container {
+    height: 80%;
+    overflow: hidden;
+   
+}
+#navi {
+    border-top: 1px dotted black;
+}
+
+#logo {
+    max-width: 80%;
+    padding: 2px;
+}
+
+#game-board {     
+    width: 100%;
+    height: 100%;
+    display: grid;
+    background-color: #daedb8;
+    /*border-radius: 100px;*/
+    grid-template-columns: repeat(25, 1fr);
+    grid-template-rows: repeat(16, minmax(20px, 1fr));
+    /*padding-bottom: 15px;*/
+    margin: auto;
+    box-sizing: border-box;
+}
+.game-border-1 {
+    height: 400px;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.game-border-1 {
+    
+    /* Adjust padding as needed to align with your design */
+    border-radius: 25px;
+    box-shadow: inset 0 0 0 15px #ff6f61; /* Coral */
+    padding: 1px; 
+    border: 5px solid #e84545; /* Darker coral */
+    box-sizing: border-box;
+}
+
+@keyframes slither {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(200%);
+    }
+}
+
+.snakehead {
+    display: flex;
+}
+
+.snake-segment {
+    width: 30px; /* Adjust as needed */
+    height: 10px; /* Adjust as needed */
+    background-color: rgb(34, 42, 34); /* Adjust color as needed */
+    margin-right: 5px; /* Adjust spacing between segments */
+    
+}
+.snake-segment:last-child {
+    border-right: 5px solid red;
+}
+
+.snake-segment:last-child {
+    margin-right: 0; /* Remove spacing for the last segment */
+}
+
+.snakehead {
+    animation: slither 5s linear infinite; /* Adjust duration as needed */
+}
+
+
+.game-border-2 {
+    /* Adjust padding as needed to align with your design */
+    width: 95%;
+    height: 95%;
+    border-radius: 30px;
+    box-shadow: inset 0 0 0 15px #62b3d1; /* Sky blue */
+    padding: 20px;
+    border: 3px solid #0e4a6f; /* Dark blue */
+    box-sizing: border-box;
+    
+}
+
+#instruction-text {
+    text-transform: capitalize;
+    width: 70%;
+}
+
+#highScore {
+    
+    margin: 2px;
+}
+
+.snake {
+    background-color:#2E2F30;
+    border:double 3px #000000;
+
+
+}
+
+
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; } 
+  }
+  
+.food {
+    background-color:    hsl(0, 0%, 0%); /* Dark for the food */
+    animation: blink 3s infinite; /* 1s for the duration, infinite for continuous animation */
+      
+  }
+     
+.snake-color-btn {
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#copyright {
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+}
+.user {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-left: 10px;
+}
+
+.scores {
+    border-top:1px dotted #2E2F30;
+    border-bottom:1px dotted #2E2F30;
+}
+
+#score {
+    font-size: 28px;
+    font-weight: 500;
+    margin-right: 12px;
+    padding-top: 0;
+    padding-left: 1px;
+    margin-bottom: 2px;
+    background-color: #000000;
+    color: white;
+    text-align: center;
+}
+
+/*Styling for navbar and navlinks on top*/
+.nav-link {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 20px;
+    padding-right: 10px;
+    padding-bottom: 3px;
+    margin-bottom: 4px;
+    color: #000000;
+    border:1px solid #000000;
+    font-weight: 600;
+
+}
+
+/* Touch buttons styling */
+.touch-buttons-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#touch-buttons button {
+    margin: 0;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: large;
+    
+}
+
+
+#touch-buttons button:hover {
+    background-color: #2980b9;
+}

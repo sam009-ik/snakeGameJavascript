@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block title %}
+     Homepage
+{% endblock %}
+
+{% block main %}
+
+<div class="container">
+    <div class="row mb-3 mt-1 pt-2 position-relative justify-content-center">
+        <div class="col-12 col-md-10 d-flex justify-content-center">
+            <h2 class="game-title me-4 pe-2">Nokia Snake Game</h2>
+            <div id="colorButtons">
+                <button class="btn snake-color-btn" style="background-color: #2E2F30;" onclick="changeSnakeColor('#2E2F30')">Classic</button>
+                <button class="btn snake-color-btn" style="background-color: #FF0000;" onclick="changeSnakeColor('#FF0000')">Red</button>
+                <button class="btn snake-color-btn" style="background-color: #0000FF;" onclick="changeSnakeColor('#0000FF')">Blue</button>
+                <button class="btn snake-color-btn" style="background-color: #008000;" onclick="changeSnakeColor('#008000')">Green</button>
+                <button class="btn snake-color-btn" style="background-color: #FFFF00;" onclick="changeSnakeColor('#FFFF00')">Yellow</button>
+            </div>
+        </div>
+    </div>
+    <div class="scores row my-4 position-relative justify-content-center">
+        <div class="col-12 d-flex col-md-10 justify-content-center">
+            <span id="score" class="d-flex pe-2 ps-2 user text-center justify-content-center">000</span>
+            <span class="d-flex text-center user">
+                {% if current_user.is_authenticated %}
+                    Username: {{ current_user.username }} | Snakename: {{ current_user.snakename }}
+                {% endif %}
+            </span>
+            <span class="d-flex ms-3 ps-3 user justify-content-center text-center">
+                {% if current_user.is_authenticated %}
+                <span id="highScore" class="high-score">Highscore: {{ user_highscore|default("000") }}</span>
+                {% endif %}
+            </span>                
+        </div>
+    </div>
+    
+    <div class="row position-relative justify-content-center">
+        <div class="col-12 col-md-8 game-border-1 position-relative">
+            <div class="game-border-2">
+                <div id="game-board" class="border-2">
+                    <!-- Game board content -->
+                </div>
+            </div>
+            <div class="d-flex flex-column position-absolute w-100 h-100 justify-content-center align-items-center">
+                <img id="logo" class="p-1 img-fluid" src="../static/snakeImg/snake-logo-processed.jpg" alt="snake-logo"/>
+                <h5 id="instruction-text" class="text-dark text-center mb-1">Press spacebar or Start via Arrow-Key-Buttons</h5>
+            </div>                    
+        </div>
+        <!-- Touch buttons -->
+        <div class="col-12 col-md-2 touch-buttons-container">
+            <div id="touch-buttons" class="d-flex flex-column align-items-center">
+                <div class="d-flex flex-column align-content-center justify-content-center">
+                    <button class="btn btn-sm btn-outline-dark my-1" id="up-button">⬆️</button>
+                    <div class="d-flex  align-items-center">
+                        <button class="btn btn-sm btn-outline-dark me-1" id="left-button">⬅️</button>
+                        <button class="btn btn-sm btn-outline-dark" id="down-button">⬇️</button>
+                        <button class="btn btn-sm btn-outline-dark ms-1" id="right-button">➡️</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
