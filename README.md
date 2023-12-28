@@ -1,8 +1,19 @@
 # Retro Nokia Snake Game
 
+### Video Demo
+[![Retro Snake Game Demo](https://img.youtube.com/vi/ddp92Dnglds/0.jpg)](https://youtu.be/ddp92Dnglds?si=2pQWuN31bxPWCKNA)
+
+### Description
 This project is a web-based version of the classic Nokia snake game, implemented with a modern twist. It combines the nostalgic feel of the old-school snake game with contemporary web technologies, offering a fun and engaging experience. 
 
-## Project Structure and Description
+### How to Play
+- Navigate to the website.
+- Register for an account or log in.
+- Use the arrow keys or on-screen buttons to control the snake.
+- Eat food to grow the snake and increase your score.
+- Avoid running into the walls or the snake's tail.
+
+## Project Structure
 
 The project is structured into various components, each serving a specific role in the application:
 
