@@ -47,6 +47,20 @@ def index():
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
+    """
+    Register a new user.
+
+    This function handles the registration process for a new user. It receives a POST request with the user's
+    username, snakename, and password. It then hashes the password using the pbkdf2:sha256 method and stores the
+    user's information in the database. If the username already exists, it displays an error message and redirects
+    the user to the registration page. After successful registration, the user is logged in and a success message
+    is displayed. Finally, the user is redirected to the homepage.
+
+    Returns:
+        If the request method is POST, it redirects to the homepage.
+        If the request method is GET, it renders the 'register.html' template.
+
+    """
     if request.method == 'POST':
         username = request.form['username']
         snakename = request.form['snakename']
@@ -57,7 +71,7 @@ def register():
 
         existing_user = User.query.filter_by(username=username).first()
         if existing_user:
-        # Handle the case where the username already exists
+            # Handle the case where the username already exists
             flash('Username already exists. Please choose a different username.', 'error')
             return redirect(url_for('register'))
 
