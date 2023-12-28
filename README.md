@@ -8,6 +8,7 @@ This project is a web-based version of the classic Nokia snake game, implemented
 
 ### How to Play
 - Navigate to the website.
+- `https://nokia-snake-game-09f6f3ef60b8.herokuapp.com/`
 - Register for an account or log in.
 - Use the arrow keys or on-screen buttons to control the snake.
 - Eat food to grow the snake and increase your score.
@@ -86,12 +87,7 @@ This is the main application file where the Flask server is defined. It handles 
 
 - Game Music: Added to enhance user engagement and provide a more immersive gaming experience.
 
-## Playing the Game
 
-- Navigate to `http://localhost:5000` in your web browser.
-- Log in or register a new account to start playing.
-- Use the spacebar or on-screen controls to control the snake.
-- Try to eat as much food as possible without colliding with the walls or the snake's tail.
 
 ## Contributing
 
