@@ -7,8 +7,7 @@
 This project is a web-based version of the classic Nokia snake game, implemented with a modern twist. It combines the nostalgic feel of the old-school snake game with contemporary web technologies, offering a fun and engaging experience. 
 
 ### How to Play
-- Navigate to the website.
-- `https://nokia-snake-game-09f6f3ef60b8.herokuapp.com/`
+- Navigate to the [Retro Snake Game website](https://nokia-snake-game-09f6f3ef60b8.herokuapp.com/).
 - Register for an account or log in.
 - Use the arrow keys or on-screen buttons to control the snake.
 - Eat food to grow the snake and increase your score.
@@ -50,6 +49,33 @@ This is the main application file where the Flask server is defined. It handles 
 - **Backend**: Flask is used for the backend, handling user authentication, high score storage, and leaderboard functionality.
 - **Database**: User data and scores are stored using SQLite, managed with SQLAlchemy.
 - **Deployment**: The application is containerized using Docker for easy deployment and scalability.
+
+## Database Configuration and Future Plans
+
+### Current Database: SQLite
+
+The current version of the Retro Snake Game uses SQLite as its database. SQLite is a lightweight, file-based database system that is excellent for development and testing due to its simplicity and ease of configuration.
+
+#### Limitations with SQLite and Heroku
+
+- **Data Persistence**: One of the primary limitations of using SQLite on Heroku is its lack of data persistence. Heroku's filesystem is ephemeral, which means any changes to files (like the SQLite database file) are lost whenever the Heroku dyno restarts (which can happen frequently, e.g., every 24 hours or after deployments).
+- **Scalability**: SQLite is suitable for smaller applications with less concurrency. However, as it is a file-based database, it is not ideal for applications with high transaction rates or requiring more robust data handling capabilities.
+- **Production Environment**: While SQLite is fantastic for development and prototyping, it may not be the best choice for a production environment, especially for applications that require data persistence and more complex database operations.
+
+### Future Plans: Migration to PostgreSQL
+
+To address these limitations and prepare the Retro Snake Game for more robust and scalable use, there are plans to migrate the database from SQLite to PostgreSQL in the future.
+
+#### Why PostgreSQL?
+
+- **Persistence and Reliability**: PostgreSQL, being a full-fledged relational database management system, offers persistent storage, ensuring that the data is not lost between dyno restarts on Heroku.
+- **Advanced Features**: PostgreSQL comes with many advanced features such as powerful indexing, full-text search, and more complex querying capabilities, making it suitable for larger-scale and more complex applications.
+- **Heroku Integration**: Heroku has first-class support for PostgreSQL, including automated backups, easy scaling, and a simple setup process.
+
+This migration will enhance the application's capability to handle more users, provide more reliable data storage, and enable the implementation of more complex features.
+
+_Stay tuned for updates on this transition to PostgreSQL for the Retro Snake Game!_
+
 
 ## Local Setup
 
