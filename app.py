@@ -10,10 +10,16 @@ import os
 
 
 app = Flask(__name__, template_folder='templates')
+# Fetch the database URL from the environment variables
+database_url = os.environ.get('DATABASE_URL')
+
+# Replace 'postgres://' with 'postgresql://' if needed
+if database_url.startswith('postgres://'):
+    database_url = database_url.replace('postgres://', 'postgresql://', 1)
 
 #Configure sqlite and sqlAlchemy
 app.config['SECRET_KEY'] = 'katyaSarge'
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'postgresql://postgres:Jaipur$2021@localhost/UserDatabase')
+app.config['SQLALCHEMY_DATABASE_URI'] = database_url or 'postgresql://postgres:Jaipur$2021@localhost/UserDatabase'
 app.config['SQLALCHEMY_ECHO'] = False  # Add this line to enable SQL logging
 
 db = SQLAlchemy(app)
