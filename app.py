@@ -13,7 +13,9 @@ app = Flask(__name__, template_folder='templates')
 
 #Configure sqlite and sqlAlchemy
 app.config['SECRET_KEY'] = 'katyaSarge'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///your_database.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'postgresql://postgres:Jaipur$2021@localhost/UserDatabase')
+app.config['SQLALCHEMY_ECHO'] = False  # Add this line to enable SQL logging
+
 db = SQLAlchemy(app)
 #Initialize as instance of Login Manager
 login_manager = LoginManager(app)
@@ -28,7 +30,7 @@ class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
     snakename = db.Column(db.String(80), nullable=False)
-    password = db.Column(db.String(80), nullable=False)
+    password = db.Column(db.String(255), nullable=False)
     highscore = db.Column(db.Integer, default=0)
 
 # Create tables (this should be done only once)
