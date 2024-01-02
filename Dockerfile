@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM python:3.8-slim
+FROM python:3.9-slim
 
 # Set the working directory in the container to /app
 WORKDIR /app
@@ -13,9 +13,6 @@ RUN pip install gunicorn
 
 # Expose the port the app runs on
 EXPOSE 5000
-
-# Define environment variable (if needed)
-ENV NAME World
 
 # Run app.py using Gunicorn
 CMD ["gunicorn", "-b", "0.0.0.0:5000", "--timeout", "120", "app:app"]

@@ -3,11 +3,13 @@
 ### Video Demo
 [![Retro Snake Game Demo](https://img.youtube.com/vi/ddp92Dnglds/0.jpg)](https://youtu.be/ddp92Dnglds?si=2pQWuN31bxPWCKNA)
 
+
 ### Description
 This project is a web-based version of the classic Nokia snake game, implemented with a modern twist. It combines the nostalgic feel of the old-school snake game with contemporary web technologies, offering a fun and engaging experience. 
 
 ### How to Play
 - Navigate to the [Retro Snake Game website](https://nokia-snake-game-09f6f3ef60b8.herokuapp.com/).
+- For docker: http://localhost:5000
 - Register for an account or log in.
 - Use the arrow keys or on-screen buttons to control the snake.
 - Eat food to grow the snake and increase your score.
