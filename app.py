@@ -7,20 +7,22 @@ from flask_login import login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash
 from werkzeug.security import check_password_hash
 import os
+from dotenv import load_dotenv
 
+load_dotenv() #Load environment variables from .env file
 
 app = Flask(__name__, template_folder='templates')
 # Fetch the database URL from the environment variables
-database_url = os.environ.get('DATABASE_URL')
-print("Database URL:", database_url)
+database_url = os.getenv('DATABASE_URL')
+#print("Database URL:", database_url)
 
 # Replace 'postgres://' with 'postgresql://' if needed
 if database_url and database_url.startswith('postgres://'):
     database_url = database_url.replace('postgres://', 'postgresql://', 1)
 
 #Configure sqlite and sqlAlchemy
-app.config['SECRET_KEY'] = 'katyaSarge'
-app.config['SQLALCHEMY_DATABASE_URI'] = database_url or 'postgresql://postgres:Jaipur$2021@localhost/UserDatabase'
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
+app.config['SQLALCHEMY_DATABASE_URI'] = database_url
 app.config['SQLALCHEMY_ECHO'] = False  # Add this line to enable SQL logging
 
 db = SQLAlchemy(app)
@@ -29,7 +31,9 @@ login_manager = LoginManager(app)
 
 @login_manager.user_loader
 def load_user(user_id):
-    return User.query.get(int(user_id))
+    return db.session.get(User, int(user_id))
+
+    #return User.query.get(int(user_id))
 
 
 # Define your User model
