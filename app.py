@@ -14,7 +14,7 @@ load_dotenv() #Load environment variables from .env file
 app = Flask(__name__, template_folder='templates')
 # Fetch the database URL from the environment variables
 database_url = os.getenv('DATABASE_URL')
-#print("Database URL:", database_url)
+print("Database URL:", database_url)
 
 # Replace 'postgres://' with 'postgresql://' if needed
 if database_url and database_url.startswith('postgres://'):
